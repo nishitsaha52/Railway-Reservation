@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            max-width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            flex: 1;
+        }
+
+        .reservation-form {
+            background-color: #f8f8f8;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .reservation-form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .reservation-form input, .reservation-form select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .make-payment-button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        @media screen and (max-width: 768px) {
+            main {
+                padding: 10px;
+            }
+
+            .reservation-form label, .reservation-form input, .reservation-form select {
+                width: 100%;
+            }
+        }
+
+        /* Add hover effect for buttons */
+        .make-payment-button:hover {
+            background-color: #555;
+        }
+         .nav-link {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 0 5px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+                <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: white;">
+            <img src="images/logo.png" alt="Logo" height="75" width="75">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="AdminHome.html">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="About.html">About</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="Contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    <main>
+        <section>
+            <h2>Payment Details</h2>
+            <form class="reservation-form" id="payment-form" method="post" action="PaymentServlet">
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" name="card-number" required>
+                <label for="card-holder">Card Holder Name:</label>
+                <input type="text" id="card-holder" name "card-holder" required>
+                <label for="expiration-date">Expiration Date:</label>
+                <input type="text" id="expiration-date" name="expiration-date" required>
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required>
+                <input type="hidden" name="origin" value="${requestScope.origin}">
+                <input type="hidden" name="dest" value="${requestScope.dest}">
+                <input type="hidden" name="jclass" value="${requestScope.jclass}">
+                <input type="hidden" name="jdate" value="${requestScope.jdate}">
+                <input type="hidden" name="no_of_pass" value="${requestScope.no_of_pass}">
+                <button type="submit" class="make-payment-button" id="make-payment">Make Payment</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        &copy; 2023 Payment Page
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Retrieve the data from hidden fields
+            var originField = document.getElementById("origin");
+            var destField = document.getElementById("dest");
+            var jclassField = document.getElementById("jclass");
+            var jdateField = document.getElementById("jdate");
+            var no_of_passField = document.getElementById("no_of_pass");
+
+            var makePaymentButton = document.getElementById("make-payment");
+
+            makePaymentButton.addEventListener("click", function () {
+                // Prepare the data to send to the server
+                var cardNumber = document.getElementById("card-number").value;
+                var cardHolder = document.getElementById("card-holder").value;
+                var expirationDate = document.getElementById("expiration-date").value;
+                var cvv = document.getElementById("cvv").value;
+
+                // Create a data object to send via AJAX
+                var data = {
+                    origin: originField.value,
+                    dest: destField.value,
+                    jclass: jclassField.value,
+                    jdate: jdateField.value,
+                    no_of_pass: no_of_passField.value,
+                    cardNumber: cardNumber,
+                    cardHolder: cardHolder,
+                    expirationDate: expirationDate,
+                    cvv: cvv,
+                };
+
+                // Send an AJAX request to your server
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "PaymentServlet", true);
+                xhr.setRequestHeader("Content-Type", "application/json");
+
+                xhr.onload = function () {
+                    if (xhr.status === 200) {
+                        // Handle a successful payment response here
+                        alert("Payment Successful!");
+                        window.location.href = "UserHome.html";
+                    } else {
+                        // Handle payment failure
+                        alert("Payment Failed.");
+                    }
+                };
+
+                xhr.send(JSON.stringify(data));
+            });
+        });
+    </script>
+</body>
+</html>

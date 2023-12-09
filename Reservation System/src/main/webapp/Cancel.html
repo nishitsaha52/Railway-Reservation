@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancel Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            max-width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .booking-details {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .booking-details label, .booking-details input, .booking-details select {
+            width: 100%;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .cancel-booking-button {
+            background-color: #f44336;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        @media screen and (max-width: 768px) {
+            main {
+                padding: 10px;
+            }
+
+            .booking-details label, .booking-details input, .booking-details select {
+                width: 100%;
+            }
+        }
+
+        /* Add hover effect for buttons */
+        .cancel-booking-button:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cancel Booking</h1>
+    </header>
+    <main>
+        <section class="booking-details">
+            <h2>Booking Details</h2>
+            <form method="post" action="cancel" class="cancel-form">
+                <label for="origin">Origin:</label>
+                <input type="text" id="origin" name="origin" required>
+                <label for="destination">Destination:</label>
+                <input type="text" id="destination" name="destination" required>
+                <label for="journey-date">Date of Journey:</label>
+                <input type="date" id="journey-date" name="journey-date" required>
+                <label for="pnr-number">PNR Number:</label>
+                <input type="text" id="pnr-number" name="pnr-number" required>
+                <label for="passenger-count">Number of Passengers:</label>
+                <input type="number" id="passenger-count" name="passenger-count" required>
+            </form>
+            <button class="cancel-booking-button" id="cancel-booking">Cancel Booking</button>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2023 Cancel Booking Page
+    </footer>
+</body>
+</html>

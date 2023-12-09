@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Train Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .button {
+            background-color: #333;
+            color: #fff;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .button:last-child {
+            margin-right: 0;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Admin Train Management</h1>
+    </header>
+    <div class="container">
+        <h2>Train Information</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Train ID</th>
+                    <th>Train Name</th>
+                    <th>Origin</th>
+                    <th>Destination</th>
+                    <th>Arrival Time</th>
+                    <th>Departure Time</th>
+                    <th>1A</th>
+                    <th>2A</th>
+                    <th>3A</th>
+                    <th>3E</th>
+                    <th>SL</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="trainDataBody">
+                <!-- Data will be inserted here by the servlet -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+        // You can use JavaScript to fetch and insert data into the table
+        fetch('ShowTrainServlet')  // Adjust the servlet URL as needed
+            .then(response => response.json())
+            .then(data => {
+                const trainDataBody = document.getElementById('trainDataBody');
+                data.forEach(train => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${train.trn_no}</td>
+                        <td>${train.tName}</td>
+                        <td>${train.origin}</td>
+                        <td>${train.dest}</td><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Train Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .button {
+            background-color: #333;
+            color: #fff;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .button:last-child {
+            margin-right: 0;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Admin Train Management</h1>
+    </header>
+    <div class="container">
+        <h2>Train Information</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Train ID</th>
+                    <th>Train Name</th>
+                    <th>Origin</th>
+                    <th>Destination</th>
+                    <th>Arrival Time</th>
+                    <th>Departure Time</th>
+                    <th>1A</th>
+                    <th>2A</th>
+                    <th>3A</th>
+                    <th>3E</th>
+                    <th>SL</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="trainDataBody">
+                <!-- Data will be inserted here by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+        // Use JavaScript to fetch and insert data into the table
+        fetch('ShowReserveDataServlet')  // Adjust the servlet URL as needed
+            .then(response => response.json())
+            .then(data => {
+                const trainDataBody = document.getElementById('trainDataBody');
+                data.forEach(train => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${train.trn_no}</td>;
+                        <td>${train.tName}</td>;
+                        <td>${train.origin}</td>;
+                        <td>${train.dest}</td>;
+                        <td>${train.aTime}</td>;
+                        <td>${train.dTime}</td>;
+                        <td>${train['1A']}</td>;
+                        <td>${train['2A']}</td>;
+                        <td>${train['3A']}</td>;
+                        <td>${train['3E']}</td>;
+                        <td>${train.SL}</td>;
+                        <td class="actions">
+                            <button class="button">Edit</button>
+                            <button class="button">Delete</button>
+                        </td>
+                    `;
+                    trainDataBody.appendChild(row);
+                });
+            })
+            .catch(error => console.error(error));
+    </script>
+</body>
+</html>
+
+                        <td>${train.aTime}</td>
+                        <td>${train.dTime}</td>
+                        <td>${train['1A']}</td>
+                        <td>${train['2A']}</td>
+                        <td>${train['3A']}</td>
+                        <td>${train['3E']}</td>
+                        <td>${train.SL}</td>
+                        <td class="actions">
+                            <button class="button">Edit</button>
+                            <button class="button">Delete</button>
+                        </td>
+                    `;
+                    trainDataBody.appendChild(row);
+                });
+            })
+            .catch(error => console.error(error));
+    </script>
+</body>
+</html>

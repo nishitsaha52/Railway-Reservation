@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Train</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/edit.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img src="images/logo.png" alt="Logo" height="75" width="75">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="AdminHome.html">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="About.html">About</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="Contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="container">
+        <h1>Add New Train</h1>
+        <form method="post" action="addtrain" class="register-form" id="register-form">
+            <label for="trainName">Train Name</label>
+            <input type="text" id="tName" name="tName" required>
+
+            <label for="startingStation">Starting Station</label>
+            <input type="text" id="origin" name="origin" required>
+
+            <label for "destinationStation">Destination Station</label>
+            <input type="text" id="dest" name="dest" required>
+
+            <label for="aTime">Arrival Time (HH:mm:ss)</label>
+            <input type="text" id="aTime" name="aTime" required>
+
+            <label for="departureTime">Departure Time (HH:mm:ss)</label>
+            <input type="text" id="dTime" name="dTime" required>
+
+            <label for="1A">Seat Availability: Class: 1A</label>
+            <input type="text" id="1A" name="1A" required>
+
+            <label for="2A">Seat Availability: Class: 2A</label>
+            <input type="text" id="2A" name="2A" required>
+
+            <label for="3A">Seat Availability: Class: 3A</label>
+            <input type="text" id="3A" name="3A" required>
+
+            <label for="3E">Seat Availability: Class: 3E</label>
+            <input type="text" id="3E" name="3E" required>
+
+            <label for="SL">Seat Availability: Class: SL</label>
+            <input type="text" id="SL" name="SL" required>
+
+            <!-- Add a submit button to submit the form -->
+            <button type="submit" class="button" style="color: #fff;">ADD</button>
+
+            <br>
+            <button class='button'><a href="AdminHome.html" style="color: #fff;">BACK</a></button>
+            <br>
+        </form>
+    </div>
+    <footer>
+        &copy; 2023 Your Company Name
+    </footer>
+</body>
+</html>

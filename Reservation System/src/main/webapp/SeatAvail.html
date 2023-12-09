@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Reservation System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            max-width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .search-form label, .search-form input {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .search-form button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        tfoot {
+            background-color: #333;
+            color: #fff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        @media screen and (max-width: 768px) {
+            main {
+                padding: 10px;
+            }
+        }
+
+        /* Add responsive styles */
+        @media screen and (max-width: 600px) {
+            .search-form label, .search-form input {
+                display: inline-block;
+                width: 100%;
+            }
+        }
+
+        /* Add hover effect for buttons */
+        .search-form button:hover {
+            background-color: #555;
+        }
+
+        /* Add a background color to even rows in the table for better readability */
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Train Reservation System</h1>
+    </header>
+    <main>
+        <section class="search-form">
+            <h2>Search for Trains</h2>
+            <form id="search-form">
+                <label for="from">From:</label>
+                <input type="text" id="from" name="from" required>
+                <label for="to">To:</label>
+                <input type="text" id="to" name="to" required>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+                <button type="submit">Search</button>
+            </form>
+        </section>
+
+        <section class="seat-availability">
+            <h2>Seat Availability</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Train Name</th>
+                        <th>Class</th>
+                        <th>Available Seats</th>
+                        <th>Reserve</th>
+                    </tr>
+                </thead>
+                <tbody id="search-results">
+                    <!-- Add dynamic content here using JavaScript -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        &copy; 2023 Train Reservation System
+    </footer>
+</body>
+</html>

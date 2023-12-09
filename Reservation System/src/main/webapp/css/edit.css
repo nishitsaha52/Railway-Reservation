@@ -1,0 +1,187 @@
+/* Reset some default styles for better consistency */
+body, h1, h2, h3, h4, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply a background color and set font styles for the entire page */
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the navigation bar */
+.navbar {
+    background-color: transparent; /* Make the navigation bar transparent */
+    padding: 15px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    color: #fff !important;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: #0056b3;
+}
+
+/* Add some spacing to navigation items and style the active item */
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav .nav-item {
+    margin-right: 10px;
+}
+
+.navbar-nav .nav-item.active {
+    background-color: #0056b3;
+}
+
+/* Style the container */
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the form inputs */
+input[type="text"] {
+    margin: 5px 0;
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style the table */
+table {
+    width: 100%;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+th {
+    background-color: #007BFF;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Add spacing to the table rows */
+table tr td {
+    padding: 10px;
+    text-align: center;
+}
+
+.actions {
+    white-space: nowrap;
+}
+
+/* Style the Edit and Delete buttons */
+.actions button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Style the Edit and Delete buttons on hover */
+.actions button a:hover {
+    color: #fff; /* You can adjust the hover color if needed */
+    text-decoration: underline; /* Optionally add an underline on hover */
+}
+
+.button {
+    background-color: #007BFF;
+    color: #fff; /* Change the text color to white */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Style the form inputs */
+input[type="text"] {
+    margin: 5px 0;
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style the search button */
+.search-button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #555;
+}
+
+/* Style the back button */
+.back-button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: #555;
+}
+
+/* Style the footer to appear at the bottom of the page */
+.footer {
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Center align text in the footer */
+.footer p {
+    font-size: 12px;
+    color: #fff; /* Set text color to white */
+}
+
+/* Add responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar a {
+        margin: 10px 0;
+    }
+}

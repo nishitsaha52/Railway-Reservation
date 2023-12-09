@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Reservation System</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add some custom styles for this specific page */
+        body {
+            background-color: white; /* Changed background color to white */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #aboutUs {
+            background-color: #333;
+            color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        #aboutUs img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .content {
+            margin: 20px;
+        }
+
+        .content h2 {
+            font-size: 2.5em;
+            color: #ffca70;
+        }
+
+        .content h4 {
+            font-size: 1.2em;
+            color: #fff;
+            margin: 10px 0;
+        }
+
+        .description {
+            color: #ccc;
+            margin: 20px 0;
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+
+        .btn {
+            font-weight: bold;
+            border: 2px solid #ffca70;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: all 0.4s;
+            background-color: #ffca70;
+            color: #333;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: #ffca70;
+        }
+
+        @media screen and (max-width: 790px) {
+            #aboutUs {
+                grid-template-columns: 1fr;
+            }
+
+            #aboutUs img {
+                width: 100%;
+                margin: 0;
+                border-radius: 10px 10px 0 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section id="aboutUs">
+        <img src="images/logo.png" alt="Railway Reservation System" height="500" width="100">
+        <div class="content">
+            <h2>About Railway Reservation System</h2>
+            <h4>Your Journey, Our Commitment</h4>
+            <p class="description">
+                Welcome to the Railway Reservation System, where your journey is our commitment. We provide a seamless and efficient platform for booking train tickets, checking schedules, and managing your travel plans. Our user-friendly interface and state-of-the-art technology make railway reservations a breeze.
+                <br><br>
+                With a passion for innovation and a dedication to customer satisfaction, our team of developers and designers ensures that your travel experience is smooth and stress-free. Join us on this exciting journey, and let us take you to your destination with comfort and convenience.
+            </p>
+            <!-- Changed the button to an anchor link that goes to BookTicket.html -->
+            <a class="btn" href="BookTicket.html">Book Your Ticket</a>
+        </div>
+    </section>
+
+</body>
+</html>
